@@ -1,0 +1,90 @@
+#include <Stdio.h>
+#include <windows.h>
+#include <string.h>
+#include <stdlib.h>
+int life = 3; // 목숨 변수 선언
+int pro1(); // 함수 선언
+int pro2(); // 함수 선언
+int pro3();
+int pro4();
+int main() {
+	char id[10];
+	int pw;
+	pro1(); // 함수 호출
+	system("pause");
+	system("cls");
+	pro2();
+	system("pause");
+	system("cls");
+	pro3();
+	system("pause");
+	system("cls");
+}
+int pro1() {
+	char name[10]; //입력 텍스트
+	char name_a[10] = "이건";
+	char name_b[300] = "건";
+	while (1) {
+		printf("우리학교 최고의 파오후는??\n::");
+		scanf("%s", name);
+		if (strcmp(name, name_a) == 0||strcmp(name,name_b)==0) // 문자열 비교
+		{
+			printf("맞습니다!!!\n");
+			return 0;
+		}
+		else {
+			life--;
+			printf("틀렸습니다. 기회는 %d번 남았습니다\n", life);
+		}
+	}
+}
+int pro2() {
+	char name[10]; //입력 텍스트
+	char name_a[10] = "한글";
+	while (1) {
+		printf("형민이가 가장 자신있어 했지만 은근히 못하는 것은??\n::");
+		scanf("%s", name);
+		if (strcmp(name, name_a) == 0) // 문자열 비교
+		{
+			printf("맞습니다..이새끼는 한글로 부심을 너무 부려서 질릴정도 입니다.\n");
+			return 0;
+		}
+		else {
+			life--;
+			printf("틀렸습니다. 기회는 %d번 남았습니다\n", life);
+		}
+	}
+}
+int pro3() {
+	char name[10]; //입력 텍스트
+	char name_a[10] = "호구마";
+	while (1) {
+		printf("[중간_Boss] 다음 초성을 맞추세요.\nㅎㄱㅁ\n::");
+		scanf("%s", name);
+		if (strcmp(name, name_a) == 0) // 문자열 비교
+		{
+			printf("맞습니다. 오사쯔는 하스를 한시 빨리 끊어야 합니다.\n");
+			return 0;
+		}
+		else {
+			life--;
+			printf("틀렸습니다. 기회는 %d번 남았습니다\n", life);
+		}
+	}
+}
+int pro4() {
+	int ans; //입력 텍스트
+	while (1) {
+		printf("다음중 2016년에 만들어진 별명이 아닌것을 고르시오\n1. 쥐석\n2. 매지석\n3. 가!자지석아\n4.쥐식\n::");
+		scanf("%d",&ans);
+		if (ans==3) // 문자열 비교
+		{
+			printf("가! 자지석아\n");
+			return 0;
+		}
+		else {
+			life--;
+			printf("틀렸습니다. 기회는 %d번 남았습니다\n", life);
+		}
+	}
+}
