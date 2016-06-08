@@ -1,0 +1,55 @@
+#include<stdio.h>
+#include<string.h>
+#include<windows.h>
+#include<stdilb.h>
+
+int life=3
+int pro1(); 
+int main(){
+	pro1();
+	system("pause");
+	system("cls");
+	pro2();
+	system("pause");
+	system("cls");
+}
+int pro1(){
+	char name[50];
+	char name_a[50]="고구마는몸에좋다";
+	
+	while(1){
+		printf("메모지에 \"Cs1 Ce5 	 Cs1 Ce7 	 Cs5 Ce1  	Cs2 Ce9 Cs2  	Cs5 Ce5 Cs5  	Cs8 Ce3 Ce10  	Cs9 Ce5 Cs14  	Cs3 Ce1\"라고 써있다. \n 과연 무슨뜻 일까?\nCs : Consonant, Ce : Collection \n::");
+		scanf("%s",name);
+		
+		if(strcmp(name,name_a)==0)
+		{
+			printf("축하합니다 정답입니다.\n");
+			return 0;
+		}
+		else{
+			life--;
+			printf("틀리셨습니다. 답은 고구마는몸에좋다 입니다.\n기회는%d번 남았습니다.\n",life);
+		}
+	} 
+}
+	
+	int pro2(){
+	char name[10];
+	char name_a[10]="911테러";
+	
+	while(1){
+		printf("오사마 빈 라덴의 테러조직인 알 카에다 등 이슬람 테러조직이 벌인 사건은??\n::");
+		scanf("%s",name);
+		
+		if(strcmp(name,name_a)==0)
+		{
+			printf("맞습니다.\n");
+			return 0;
+		}
+		else{
+			life--;
+			printf("틀렸습니다.기회는%d번 남았습니다.\n",life);
+		}
+	} 
+}
+	
