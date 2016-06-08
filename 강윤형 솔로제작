@@ -1,0 +1,165 @@
+#include <stdio.h>  //고칠거 있으면 알아서 가져가서 고쳐 난 귀찮아
+#include <windows.h>
+void main()
+{
+	int pw, a, b, c, menu;
+	int hd, sel;
+	int kh1, kh2;//포켓몬 김용희
+	int jy1, jy2; //김종윤
+
+	printf("***********Hello GUY*********** \n"); 
+Main:	printf("비밀번호를 입력하세요.\n"); //비밀번호 입력받고 틀리면 다시 초기화
+	scanf("%d", &pw);
+	if (pw == 1029)
+	{
+		printf("*********HELLO Master*********\n"); //로그인성공
+		printf("Login access\n");
+
+	}
+	else
+	{
+		printf("Not Assigned\n");
+		goto Main;
+	}
+	Meun:printf("1.우리반에 대한 퀴즈문제들 2.포켓몬 배틀   3.나가기\n"); //선택창
+	scanf("%d", &menu);
+	if (menu == 1)
+		goto A;
+	else if (menu == 3) //3번입력시 이렇게됨
+	{
+		Sleep(1000);
+		printf("걍 니가 x키 눌러서 나가 ㅅㅂ\n");
+	}
+	else if (menu == 2)
+		goto Game;
+Game:printf("안녕하세요 포켓몬 배틀입니다\n");
+	printf("당신이 플레이할 포켓몬을 선택하세요\n");
+	Sleep(500);
+	printf("※중요※  이건,박신우,유원근 플레이 불가 업데이트중..\n");
+	Sleep(200);
+	printf("1.김용희 2.김종윤 3.이건 4.박신우 5.유원근\n");
+	scanf("%d", &sel);
+	if (sel == 1)
+		printf("김용희를 선택하셨습니다\n");
+	
+	printf("당신은 김종윤과 만났습니다. 1.싸우기 2.도망가기\n");
+	scanf("%d", &kh1);
+	if (kh1 == 1)
+
+	{
+		
+		printf("김종윤은 먼저 선빵을 후렸다! 당신의 100HP중 15가 깎였다\n");
+		printf("당신의 공격스킬 1.아가리로 멘탈터트리기 2.두다다다 때리기 3.젖만지기\n");
+		scanf("%d", &kh2);
+		if (kh2 == 1)
+			printf("아가리로 멘탈을 터트리는데 성공했다! 100HP중 40이 깎였다\n");
+		else if (kh2 == 2)
+			printf("두다다다다 때렸다 효과는 약했다 김종윤의 물지방으로 다 막아냈다\n");
+		else if (kh2 == 3)
+			printf("젖을 만졌더니 김종윤은 발기하여 정신을 잃었다. 굉장한 효과다!\n");
+		printf("김종윤은 도망쳐버렸다...\n");
+		Sleep(500);
+		printf("김용희의 KO승~\n");
+		printf("김용희 스토리 끝... 메뉴로 돌아갑니다.\n");
+		goto Meun;
+	}
+	if (sel == 2)
+	{
+		printf("김종윤을 선택했습니다.\n");
+		
+		printf("유원근은 김종윤을 싸닥션으로 당신의 100HP중 20을 깎았다\n");
+		printf("당신은 어떻게 공격할것인가?\n");
+		
+		printf("1.패드립치기 2.족발당수킥 3.물주먹펀치\n");
+		scanf("%d", &jy1);
+		if (jy1 = 1)
+		{
+			printf("느금마보댕이 허벌보지라서 너덜거리는 보댕이 거의 너덜거리는 싸이의 나팔보지 급\n");
+			printf("효과는 굉장했다. 유원근은 부들부들 떨고있다\n");
+		}
+		else if (jy1 == 2)
+
+		{
+			printf("족발 당수킥!!!! 정확히 내리꽂아서 유원근은 마비에 걸렸다!\n");
+			goto mz;
+		}
+		else if (jy1 == 3)
+		{
+			printf("물주먹펀치! 효과는 밋밋했다 물주먹이라서 그런것같다.\n");
+			goto mz;
+		}
+	
+		mz: printf("유원근은 머리를 퉁퉁퉁 존나게 후려갈겼다. 김종윤은 부들부들하며 유원근의 명치를 때렸다.\n");
+	
+		printf(".....");
+
+		printf("김종윤은 유원근을 죽여버렸다.. \n");
+		printf("김종윤은 경찰에 연행되어 재판을 받고 사형선고를 받았다.\n");
+		Sleep(500);
+		printf("김종윤 스토리 끝 메뉴로 돌아갑니다.");
+		goto Meun;
+	}
+
+
+	if (kh1 == 2)
+	{
+		printf("김종윤 보고 도망가는 미친넘도있네 ㅋ 죽어라 그냥");
+		while (1);
+		printf("죽어 병신아");
+	}
+
+
+	
+
+A:printf("우리반에서 가장 병신인 사람의 번호는?\n"); //1번 선택시 여기로 감
+	scanf("%d", &a);
+	if (a == 7) {
+		Sleep(500);
+		printf("맞습니다. 김종윤 돼지새끼입니다.\n"); //
+	}
+	else
+	{
+		printf("틀렸습니다. 다시한번 해보세요.\n"); //틀리면 A로 가게설정
+		goto A;
+	}
+
+B:printf("그럼 그 돼지의 몸무게는 몇일까요?\n"); //2번문제
+	scanf("%d", &b);
+	if (b == 90)
+	{
+		Sleep(500);
+		printf("맞습니다! 김종건을 잘 아시고계시네요.\n"); //맞으면 3번
+	}
+	else {
+
+		printf("틀렸습니다... 다시 한번 해보세요.\n"); goto B; //틀리면 B로 가게 설정
+	}
+C:printf("그럼 이번엔 우리반 한입충의 번호는?\n"); //3번 문제
+	scanf("%d", &c);
+	if (c == 9)
+	{
+		Sleep(500);
+		printf("맞습니다. 개극혐 도라이몽새끼입니다~\n"); //맞으면 4번
+	}
+	else
+	{
+		printf("틀렸습니다.. 힌트는 너구리 입니다.\n"); //틀리면 C로 가게 설정
+		goto C;
+
+	}
+	printf("이번 문제는 가장 어려운 문제입니다. 잘봐주세요\n");
+D:printf("우리반에서 가장 답이없고 미친년으로 유명한사람은 누구일까요?");// 4번 문제
+	Sleep(500);
+	printf("1.김초현 2.유혜빈 3.강서원 4.허혜영\n");
+	scanf("%d", &hd);
+	if (hd == 4)
+		printf("당신은 우리반에 대해 아주 잘알고있습니다!\n");
+	else
+	{
+		printf("틀렸습니다.. 가장 중요한문제이니 꼭 맞춰보세요\n");
+		goto D;
+	}
+	printf("**==========Made By Kang==========** \n");
+	printf("Copyright all rights reserved");
+	
+}
