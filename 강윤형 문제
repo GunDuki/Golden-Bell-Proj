@@ -1,0 +1,61 @@
+#include <stdio.h>
+#include <windows.h>
+#include <string.h>
+#include <stdlib.h>
+int pro1();
+int pro2();
+int life=3; //라이프 3개
+int main()
+{
+	pro1(); //문제1번
+	pro2(); //문제2번
+}
+int pro1(){
+	int ans1; //첫번째 문제 변수선언
+	printf("첫번째 문제입니다.\n");
+	Sleep(800);
+	while(1){
+	printf("형민이의 지식력은? 정답률98\%\n");
+	printf("1.영유아  2.초등학생 3.중학생 4.고등학생\n");
+	scanf("%d",&ans1);
+	Sleep(400); 
+	printf("채점중\n");
+	if(ans1==2)
+	{
+	printf("맞습니다\n"); //맞으면 출력
+	printf("아는거라곤 욕하기랑 c언어 변수선언입니다.\n");
+	return 0;
+	}
+	else
+		life--;
+		printf("틀렸습니다. 남은 회수는 %d입니다.\n",life);
+		system("pause"); //멈추고
+		system("cls"); //지우기
+}
+
+	
+		
+}
+int pro2(){
+	char ans2[10]="박신우"; //정답  
+	char ans2_1[10]; //받을값
+	//문제2번변수 선언
+	while(1){
+printf("2번째 문제입니다.(주관식)\n");
+Sleep(800);
+printf("우리반 대표 춤꾼과 동시에 PL에서 짤릴 위기인 사람은?\n");
+scanf("%s",ans2_1);
+Sleep(800);
+printf("채점중..\n");
+ if (strcmp(ans2,ans2_1)==0) //문자열 비교
+      {
+         printf("맞습니다\n");
+		 printf("호구마는 하스스톤만 맨날 하다 인생이 좆망합니다\n");
+         return 0;
+      }
+      else {
+         life--;
+         printf("틀렸습니다. 기회는 %d번 남았습니다\n", life);
+      }
+   }
+}
