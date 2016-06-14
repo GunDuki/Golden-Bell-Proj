@@ -1,9 +1,12 @@
-
 #include <Stdio.h>
 #include <windows.h>
 #include <string.h>
 #include <stdlib.h>
-int score=0; // 스코어 변수 선언
+int admin();
+int challenge();
+int guest();
+int Login_Check();
+int score = 0; // 스코어 변수 선언
 int life = 3;
 int count = 1;
 int lose_count = 0; // 진 횟수
@@ -29,7 +32,7 @@ int Login_Check() {
 		scanf("%s", id);
 		printf("PW : ");
 		scanf("%d", &pw);
-		if (strcmp(id, id_guest) == 0&&pw==1111) guest();
+		if (strcmp(id, id_guest) == 0 && pw == 1111) guest();
 		else if (strcmp(id, id_admin) == 0 && pw == 1029) admin();
 		else {
 			system("cls");
@@ -41,10 +44,10 @@ int Setting() {
 	int choice;
 	int num;
 	int score_ch; // 스코어 조작 선택지
-	while(1){
-	system("cls");
-	printf("====Setting====\n\n1. Score 조작\n2. 취소\n::");
-	scanf("%d", &choice);
+	while (1) {
+		system("cls");
+		printf("====Setting====\n\n1. Score 조작\n2. 취소\n::");
+		scanf("%d", &choice);
 		switch (choice) {
 		case 1:
 			system("cls");
@@ -75,15 +78,15 @@ int Setting() {
 		}
 	}
 }
-int guest(){
+int guest() {
 	int choice;
 	system("cls");
 	account_guest++;
 	count--;
 	account_admin = 0;
 	while (1) {
-	printf("===Stat===\n\nHello Guest!\nUsername : guest\n1. 문제 풀기\n2. 전적 확인\n3. 로그아웃\n::");
-	scanf("%d", &choice);
+		printf("===Stat===\n\nHello Guest!\nUsername : guest\n1. 문제 풀기\n2. 전적 확인\n3. 로그아웃\n::");
+		scanf("%d", &choice);
 		switch (choice) {
 		case 1:
 			challenge();
@@ -110,15 +113,15 @@ int admin() {
 	count--;
 	account_guest = 0;
 	while (1) {
-	printf("===Stat===\n\nHello Admin!\nUsername : admin\n1. 문제 풀기\n2. 전적 확인\n3. 설정\n4. 로그아웃\n::");
-	scanf("%d", &choice);
+		printf("===Stat===\n\nHello Admin!\nUsername : admin\n1. 문제 풀기\n2. 전적 확인\n3. 설정\n4. 로그아웃\n::");
+		scanf("%d", &choice);
 		switch (choice) {
 		case 1:
 			challenge();
 			break;
 		case 2:
 			system("cls");
-			printf("Your Score is %d Point!\nLose Count : %d\n\n", score,lose_count);
+			printf("Your Score is %d Point!\nLose Count : %d\n\n", score, lose_count);
 			break;
 		case 3:
 			Setting();
@@ -128,12 +131,12 @@ int admin() {
 			break;
 		default:
 			printf("다시 선택해주세요.\n");
+		}
 	}
-	}
-	}
+}
 int challenge() {
 	system("cls");
-	printf("문제풀이를 시작합니다.\n\nLife = %d\nScore = %d\n\n",life,score);
+	printf("문제풀이를 시작합니다.\n\nLife = %d\nScore = %d\n\n", life, score);
 	system("pause");
 	pro1();
 	pro2();
@@ -143,6 +146,9 @@ int challenge() {
 	pro6();
 	pro7();
 	pro8();
+	pro9();
+	pro10();
+	pro11();
 }
 int pro1() {
 	char name[10]; //입력 텍스트
@@ -153,7 +159,7 @@ int pro1() {
 		system("cls");
 		printf("우리학교 최고의 파오후는??\n::");
 		scanf("%s", name);
-		if (strcmp(name, name_a) == 0||strcmp(name,name_b)==0) // 문자열 비교
+		if (strcmp(name, name_a) == 0 || strcmp(name, name_b) == 0) // 문자열 비교
 		{
 			printf("맞습니다!!!\n");
 			score += 50;
@@ -166,10 +172,10 @@ int pro1() {
 				lose_count++;
 				printf("Life가 모두 소진되었습니다. 다시 계정창으로 갑니다.\n");
 			}
-			else printf("틀렸습니다. 남은 기회는 %d번 Score는 %d Point 입니다.\n",life,score);
-		}
+			else printf("틀렸습니다. 남은 기회는 %d번 Score는 %d Point 입니다.\n", life, score);
 		}
 	}
+}
 int pro2() {
 	char name[10]; //입력 텍스트
 	char name_a[10] = "한글";
@@ -222,12 +228,12 @@ int pro3() {
 }
 int pro4() {
 	int ans; //입력 텍스트
-	while(1) {
+	while (1) {
 		system("pause");
 		system("cls");
 		printf("다음중 2016년에 만들어진 별명이 아닌것을 고르시오\n1. 쥐석\n2. 매지석\n3. 가!자지석아\n4.쥐식\n::");
-		scanf("%d",&ans);
-		if (ans==3) // 문자열 비교
+		scanf("%d", &ans);
+		if (ans == 3) // 문자열 비교
 		{
 			printf("가! 자지석아\n");
 			score += 50;
@@ -249,7 +255,7 @@ int pro5() {
 	while (1) {
 		system("pause");
 		system("cls");
-		printf("형민이의 지식력은? 정답률98\%\n");
+		printf("형민이의 지식력은? 정답률98%%\n");
 		printf("1.영유아  2.초등학생 3.중학생 4.고등학생\n");
 		scanf("%d", &ans1);
 		Sleep(400);
@@ -357,11 +363,178 @@ int pro8() {
 		}
 	}
 }
+int pro9() {
+	char name[10];
+	char name_a[10] = "911테러";
+	while (1) {
+		system("pause");
+		system("cls");
+		printf("오사마 빈 라덴의 테러조직인 알 카에다 등 이슬람 테러조직이 벌인 사건은??\n::");
+		scanf("%s", name);
 
-/*
-
- 문제점
- - 로그인 실패시 오류
- - 각 계정마다 스코어가 공유됨 ( 따로 변수를 만들어야 함 )
- 
- */
+		if (strcmp(name, name_a) == 0)
+		{
+			printf("맞습니다.\n");
+			score += 70;
+			printf("Score 70점 추가\n\n");
+			return 0;
+		}
+		else {
+			life--;
+			if (life == 0) {
+				lose_count++;
+				printf("Life가 모두 소진되었습니다. 다시 계정창으로 갑니다.\n");
+			}
+			else printf("틀렸습니다. 남은 기회는 %d번 Score는 %d Point 입니다.\n", life, score);
+		}
+	}
+}
+int pro10() {
+	int level;
+	int menu;
+	printf("===이건에 대한 문제입니다.===\n\n==난이도를 선택하세요. 1. 상, 2. 중, 3. 하==\n");
+	scanf("%d", &level);
+	if (level == 1) {
+		while (1) {
+			printf("건이가 하루에 먹는 음식들입니다. 건이가 하루에 먹는 열량을 계산하세요. 힌트:건이는 무조건 최대로 먹습니다.\n");
+			printf("===Menu===\n\n1.삼겹살\n\n2.치킨\n\n3.볶음밥.\n\n4.라면\n\n5.간식\n");
+			printf("===열량표===\n\n1.삼겹살은 100g당 331칼로리이며 최대 1800g까지 섭취가능합니다.\n\n2.치킨은 한마리당1200칼로리이고 최대 3마리까지 먹을 수 있습니다.\n\n3.볶음밥은 한그릇당 560칼로리이고 한끼에 두그릇 섭취가능합니다.\n\n4.한봉지당500칼로리이며 최대2봉지까지 먹을 수 있습니다.\n\n5.간식은 한번먹을때600칼로리만큼먹고 하루에 8번까지 먹습니다.\n");
+			scanf("%d", &menu);
+			if (menu == 14560) {
+				score += 300;
+				printf("Score 300점 추가\n\n");
+				return 0;
+			}
+			else {
+				life--;
+				if (life == 0) {
+					lose_count++;
+					printf("Life가 모두 소진되었습니다. 다시 계정창으로 갑니다.\n");
+				}
+				else printf("틀렸습니다. 남은 기회는 %d번 Score는 %d Point 입니다.\n", life, score);
+			}
+		}
+		return 0;
+	}
+	else if (level == 2) {
+		int people;
+		while (1) {
+			printf("건이가 우리반에서 싫어하는 사람은 몇명일까요?.\n");
+			scanf("%d", &people);
+			if (people == 3) {
+				score += 200;
+				printf("Score 200점 추가\n\n");
+			}
+			else {
+				life--;
+				if (life == 0) {
+					lose_count++;
+					printf("Life가 모두 소진되었습니다. 다시 계정창으로 갑니다.\n");
+				}
+				else printf("틀렸습니다. 남은 기회는 %d번 Score는 %d Point 입니다.\n", life, score);
+			}
+		}
+		return 0;
+	}
+	else if (level == 3) {
+		char exercise[10];
+		char exercise2[10] = "예";
+		while (1) {
+			printf("건이는 운동을 할까요 안할까요?\n");
+			fflush(stdin);
+			scanf("%s", exercise);
+			fflush(stdin);
+			if (strcmp(exercise, exercise2)) {
+				life--;
+				if (life == 0) {
+					lose_count++;
+					printf("Life가 모두 소진되었습니다. 다시 계정창으로 갑니다.\n");
+				}
+				else printf("틀렸습니다. 남은 기회는 %d번 Score는 %d Point 입니다.\n", life, score);
+			}
+			else
+			{
+				score += 100;
+				printf("Score 100점 추가\n\n");
+				break;
+			}
+			}
+		}
+	}
+int pro11() {
+	//printf("김태호에 대한 문제입니다.");
+	int level;
+	int height;
+	printf("==난이도를 선택하세요.==\n\n1.상\n\n2.중\n\n3.하\n");
+	scanf("%d", &level);
+	if (level == 1)
+	{
+		printf("태호의 정확한 키는 몇일까요?\n");
+		scanf("%d", &height);
+		if (height == 157)
+		{
+			score += 300;
+			printf("Score 300점 추가\n\n");
+		}
+		else
+		{
+			life--;
+			if (life == 0) {
+				lose_count++;
+				printf("Life가 모두 소진되었습니다. 다시 계정창으로 갑니다.\n");
+			}
+			if (height>157) {
+				printf("아닙니다 태호는 더작은 도라에몽입니다. 남은 기회의 개수는 %d개 입니다.", life);
+			}
+			else if (height<157) {
+				life--;
+				printf("아닙니다 보기엔그렇게보이지만 실제론조금더큽니다. 누적된 기회의 개수는 %d개 입니다.", life);
+			}
+		}
+	}
+	else if (level == 2)
+	{
+		char name[10];
+		char name_a[10] = "강서원";
+		printf("태호가 매일 주변을 맴도는 사람의 이름은?");
+		scanf("%s", name);
+		if (strcmp(name, name_a))
+		{
+			score += 200;
+			printf("Score 200점 추가\n\n");
+		}
+		else
+		{
+			life--;
+			if (life == 0) {
+				lose_count++;
+				printf("Life가 모두 소진되었습니다. 다시 계정창으로 갑니다.\n");
+			}
+			else printf("틀렸습니다. 남은 기회는 %d번 Score는 %d Point 입니다.\n", life, score);
+		}
+		return 0;
+	}
+	else if (level == 3)
+	{
+		int height;
+		while (1) {
+			printf("태호는 해킹1-2반에서 키번호가 몇번일까요?");
+			scanf("%d", &height);
+			if (height == 2)
+			{
+				score += 100;
+				printf("Score 100점 추가\n\n");
+				break;
+			}
+			else
+			{
+				life--;
+				if (life == 0) {
+					lose_count++;
+					printf("Life가 모두 소진되었습니다. 다시 계정창으로 갑니다.\n");
+				}
+				else printf("틀렸습니다. 남은 기회는 %d번 Score는 %d Point 입니다.\n", life, score);
+			}
+		}
+	}
+}
